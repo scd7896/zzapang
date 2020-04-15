@@ -1,12 +1,13 @@
-import { Action } from "redux";
-import { SET_TEST_THUMBANAIL } from "../action";
-import { ThumbnailList } from '../dummyData'
-const thumbnail = (state: ThumbnailSectionProps, action: Action) => {
+import { SET_TEST_THUMBANAIL } from '../action/actionTypes';
+import { ThumbNailAction } from "../action";
+
+const thumbnail = (state: any, action: ThumbNailAction): Thumbnail => {
     switch(action.type) {
         case SET_TEST_THUMBANAIL :
-            return {...ThumbnailList}
+            
+            return { ...state,}
         default:
-            return {...state}
+            return { ...state }
     }
 }
 

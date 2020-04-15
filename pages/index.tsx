@@ -1,16 +1,14 @@
 import * as React from 'react'
 import { NextPage } from 'next';
 import { useDispatch } from 'react-redux';
-import { SET_TEST_THUMBANAIL } from '../action';
-import { Action } from 'redux';
 
+import { Action } from 'redux';
+import { ThumbnailList } from '../dummyData'
+import { setTestTumbnail } from '../action';
 const Home: NextPage<{ userAgent: string }> = ({ userAgent }) => {
     const dispatch = useDispatch();
     React.useEffect(()=>{
-        const setAction: Action = {
-            type: SET_TEST_THUMBANAIL
-        }
-        dispatch(setAction);
+        
     },[])
     return(
         <div>

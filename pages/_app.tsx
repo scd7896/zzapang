@@ -17,14 +17,14 @@ class MyApp extends App {
         )
     }
 }
-const configureStore = (initialState: any, options: object) => {
+const configureStore = (initialState?: any, options?: any) => {
     const middlewares: any = []; // 미들웨어들을 넣으면 된다.
     const enhancer = process.env.NODE_ENV === 'production' ? 
         compose(applyMiddleware(...middlewares)) : 
             composeWithDevTools(
                 applyMiddleware(...middlewares)
             );
-    const store = createStore(reducer, initialState, enhancer);
+    const store = createStore(reducer, {}, enhancer);
     return store;
 }
   
