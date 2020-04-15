@@ -1,6 +1,6 @@
 import * as React from 'react'
 import withRedux from 'next-redux-wrapper';
-import App  from 'next/app';
+import App, { AppContext }  from 'next/app';
 
 import { Provider } from 'react-redux';
 import { createStore, compose, applyMiddleware, Store } from 'redux';
@@ -8,6 +8,13 @@ import { composeWithDevTools } from 'redux-devtools-extension';
 import reducer from '../reducer'
 
 class MyApp extends App {
+    static async getInitialProps({ Component, ctx }: AppContext) {
+        let pageProps = {};
+        if (Component.getInitialProps) {
+            pageProps = await Component.getInitialProps(ctx);
+        }
+        return { pageProps }
+    }
     public render() {
         const { Component, pageProps, store } = this.props as any;
         return(
@@ -24,7 +31,7 @@ const configureStore = (initialState?: any, options?: any) => {
             composeWithDevTools(
                 applyMiddleware(...middlewares)
             );
-    const store = createStore(reducer, {}, enhancer);
+    const store = createStore(reducer, initialState, enhancer);
     return store;
 }
   

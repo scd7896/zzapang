@@ -1,4 +1,13 @@
+interface BigImageData {
+    bigImageUrl: string,
+    title: string
+}
+interface snapShotImageData {
+    imageUrl: string,
+    title: string
+}
 interface ThumbnailSectionProps {
-    bigThumbnailImageDatas: ThumbnailBigImageProps[],
-    snapShotDatas: SnapshotThumbnailProps[],
+    bigThumbnailImageDatas: BigImageData[],
+    snapShotDatas: snapShotImageData[],
+    nowSelect: number
 }
