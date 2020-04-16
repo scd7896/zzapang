@@ -2,6 +2,7 @@ import * as React from 'react'
 import { useState, useEffect } from 'react'
 import ThumbnailBigImage from '../../atoms/ThumbnailBigImage';
 import SnapshotThumbnailBox from '../../molecules/SnapshotThumbnailBox'
+import './styles.scss'
 export interface ThumbnailSectionProps {
     bigThumbnailImageDatas: BigImageData[],
     snapShotDatas: snapShotImageData[],
@@ -18,7 +19,7 @@ const ThumbnailSection = ({ bigThumbnailImageDatas, snapShotDatas, nowSelect }: 
         setCnt(cnt+1);
     },[nowSelect])
     return (
-        <section>
+        <section className="thumbnail-section">
             {
                 bigThumbnailImageDatas.map((bigThumbnailImageData, i) => {
                     console.log('vv',cnt, nowSelect)
@@ -29,9 +30,9 @@ const ThumbnailSection = ({ bigThumbnailImageDatas, snapShotDatas, nowSelect }: 
                         key={i} />
                 })
             }
-            <div>
-                
-            </div>
+            <article className="thumbnail-middle-article">
+                <SnapshotThumbnailBox snapShotDatas={snapShotDatas}/>
+            </article>
         </section>
     )
 }

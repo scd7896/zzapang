@@ -5,6 +5,7 @@ import { useDispatch, useSelector } from 'react-redux';
 import { ThumbnailList } from '../dummyData'
 import { setTestTumbnail, rotateThumbnail } from '../action';
 import ThumbnailSection from '../component/organisms/ThumbnailSection'
+import './styles.scss'
 const Home: NextPage<{ userAgent: string }> = ({ userAgent }) => {
     const thumbnail: Thumbnail = useSelector<RootStore>(state => state.thumbnail) as Thumbnail;    
     const [timer, setTimer] = useState<NodeJS.Timeout>();
@@ -16,8 +17,6 @@ const Home: NextPage<{ userAgent: string }> = ({ userAgent }) => {
     },[])
     return(
         <div>
-            hello world
-            <p>userAgent : { userAgent }</p>
             <ThumbnailSection 
                 nowSelect={thumbnail.nowSelect}
                 bigThumbnailImageDatas={thumbnail.bigImageDatas}
