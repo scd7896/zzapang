@@ -1,3 +1,0 @@
-interface SnapshotThumbnailBoxProps {
-    snapShotDatas: SnapshotThumbnailProps[]
-}

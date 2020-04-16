@@ -1,6 +1,6 @@
 
 
-export const ThumbnailList: ThumbnailSectionProps = {
+export const ThumbnailList = {
     nowSelect: 0,
     bigThumbnailImageDatas: [{
         bigImageUrl: 'https://static.coupangcdn.com/ha/cmg_paperboy/image/1586847977007/%5BA%5DC1%ED%85%9C%ED%94%8C%EB%A6%BF_PC%288%29.jpg',

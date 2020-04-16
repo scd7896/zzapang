@@ -6,8 +6,7 @@ interface snapShotImageData {
     imageUrl: string,
     title: string
 }
-interface ThumbnailSectionProps {
-    bigThumbnailImageDatas: BigImageData[],
-    snapShotDatas: snapShotImageData[],
-    nowSelect: number
+
+interface RootStore {
+    thumbnail: Thumbnail
 }

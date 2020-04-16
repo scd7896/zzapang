@@ -1,3 +1,0 @@
-interface RootStore {
-    thumbnail: Thumbnail
-}
