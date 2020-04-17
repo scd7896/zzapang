@@ -3,7 +3,7 @@ import { useEffect, useState } from 'react';
 import { NextPage } from 'next';
 import { useDispatch, useSelector } from 'react-redux';
 import { ThumbnailList } from '../dummyData'
-import { setTestTumbnail, rotateThumbnail } from '../action';
+import { setTestTumbnail, rotateThumbnail } from '../action/thumbnail';
 import IndexTemplate from '../component/template/root';
 import ThumbnailSection from '../component/organisms/ThumbnailSection'
 import './styles.scss'

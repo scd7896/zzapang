@@ -1,6 +1,6 @@
 import * as React from 'react';
 import { useDispatch, useSelector } from 'react-redux';
-import { targetSetThumbnail } from '../../../action';
+import { targetSetThumbnail } from '../../../action/thumbnail';
 import './styles.scss';
 export interface SnapshotThumbnailProps {
     imageUrl: string;

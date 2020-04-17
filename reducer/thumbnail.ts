@@ -1,5 +1,5 @@
 import { SET_TEST_THUMBANAIL, ROTATE_SET_THUMBNAIL, TARGET_SET_THUMBNAIL } from '../action/actionTypes';
-import { ThumbNailAction } from "../action";
+import { ThumbNailAction } from "../action/thumbnail";
 
 const thumbnail = (state: Thumbnail, action: ThumbNailAction): Thumbnail => {
     switch(action.type) {
