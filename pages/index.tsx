@@ -4,6 +4,7 @@ import { NextPage } from 'next';
 import { useDispatch, useSelector } from 'react-redux';
 import { ThumbnailList } from '../dummyData'
 import { setTestTumbnail, rotateThumbnail } from '../action';
+import IndexTemplate from '../component/template/root';
 import ThumbnailSection from '../component/organisms/ThumbnailSection'
 import './styles.scss'
 const Home: NextPage<{ userAgent: string }> = ({ userAgent }) => {
@@ -25,11 +26,7 @@ const Home: NextPage<{ userAgent: string }> = ({ userAgent }) => {
     },[thumbnail.nowSelect])
     return(
         <div>
-            <ThumbnailSection 
-                nowSelect={thumbnail.nowSelect}
-                bigThumbnailImageDatas={thumbnail.bigImageDatas}
-                snapShotDatas={thumbnail.snapShotDatas}
-            />
+            <IndexTemplate thumbnail={thumbnail} />
         </div>
     )
 }
