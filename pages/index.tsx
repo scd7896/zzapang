@@ -11,10 +11,18 @@ const Home: NextPage<{ userAgent: string }> = ({ userAgent }) => {
     const [timer, setTimer] = useState<NodeJS.Timeout>();
     const dispatch = useDispatch();
     useEffect(() => {
-        setTimer(setTimeout(()=>{
+        if(thumbnail.nowSelect === 2) {
+            clearInterval(timer!);
+            setTimer(undefined);
+            return;
+        }
+        if(timer) {
+            return
+        }
+        setTimer(setInterval(()=>{
             dispatch(rotateThumbnail())
         }, 2500))
-    },[])
+    },[thumbnail.nowSelect])
     return(
         <div>
             <ThumbnailSection 
@@ -41,7 +49,8 @@ Home.getInitialProps = async ({req, store}) => {
     })
     const payload = {
         bigImageDatas: bigImageDatas,
-        snapShotImageDatas: snapshotImageDatas
+        snapShotImageDatas: snapshotImageDatas,
+        timer: null
     }
     store.dispatch(setTestTumbnail(payload));
     

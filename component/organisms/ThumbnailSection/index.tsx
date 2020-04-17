@@ -16,13 +16,12 @@ const ThumbnailSection = ({ bigThumbnailImageDatas, snapShotDatas, nowSelect }: 
             return;
         }
         
-        setCnt(cnt+1);
+        setCnt(nowSelect + 1);
     },[nowSelect])
     return (
         <section className="thumbnail-section">
             {
                 bigThumbnailImageDatas.map((bigThumbnailImageData, i) => {
-                    console.log('vv',cnt, nowSelect)
                     return <ThumbnailBigImage 
                         bigImageUrl={bigThumbnailImageData.bigImageUrl}
                         isLoading={cnt > i}

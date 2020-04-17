@@ -1,6 +1,7 @@
 import * as React from 'react';
 import { useDispatch, useSelector } from 'react-redux';
-
+import { targetSetThumbnail } from '../../../action';
+import './styles.scss';
 export interface SnapshotThumbnailProps {
     imageUrl: string;
     title: string;
@@ -11,11 +12,11 @@ const SnapshotThumbnail = ({ imageUrl, title, index }: SnapshotThumbnailProps) =
     const dispatch = useDispatch();
     const nowSelect = useSelector<RootStore>(state => state.thumbnail.nowSelect);
     const onMouseOverEvent = () => {
-        
+        dispatch(targetSetThumbnail(index));
     }
 
     return (
-        <li className={ nowSelect === index ? "selected" : "" } onMouseOver={onMouseOverEvent}>
+        <li className={ nowSelect === index ? "thumbnail-selected" : "" } onMouseOver={onMouseOverEvent}>
             <img src={ imageUrl } width="180px" height="60px" alt={title}/>
         </li>
     )

@@ -1,4 +1,15 @@
-import { SET_TEST_THUMBANAIL, ROTATE_SET_THUMBNAIL } from './actionTypes'
+import { 
+    SET_TEST_THUMBANAIL, 
+    ROTATE_SET_THUMBNAIL, 
+    TARGET_SET_THUMBNAIL 
+} from './actionTypes';
+
+export const targetSetThumbnail = (payload: number) => {
+    return {
+        type: TARGET_SET_THUMBNAIL,
+        nowSelect: payload
+    }
+}
 
 export const setTestTumbnail = (payload: any) => {
     return {
@@ -10,7 +21,8 @@ export const setTestTumbnail = (payload: any) => {
 
 export const rotateThumbnail = () => {
     return {
-        type: ROTATE_SET_THUMBNAIL
+        type: ROTATE_SET_THUMBNAIL,
+        
     }
 }
 
@@ -18,3 +30,4 @@ export const rotateThumbnail = () => {
 export type ThumbNailAction = 
 | ReturnType<typeof setTestTumbnail>
 | ReturnType<typeof rotateThumbnail>
+| ReturnType<typeof targetSetThumbnail>

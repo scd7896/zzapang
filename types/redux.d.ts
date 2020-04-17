@@ -8,5 +8,6 @@ interface BigImageData {
 interface Thumbnail {
     nowSelect: number,
     snapShotDatas: SnapShotData[],
-    bigImageDatas: BigImageData[]
+    bigImageDatas: BigImageData[],
+    timer: NodeJS.Timeout
 }
