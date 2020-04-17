@@ -12,17 +12,14 @@ const Home: NextPage<{ userAgent: string }> = ({ userAgent }) => {
     const [timer, setTimer] = useState<NodeJS.Timeout>();
     const dispatch = useDispatch();
     useEffect(() => {
-        if(thumbnail.nowSelect === 2) {
-            clearInterval(timer!);
-            setTimer(undefined);
-            return;
-        }
         if(timer) {
             return
         }
         setTimer(setInterval(()=>{
             dispatch(rotateThumbnail())
         }, 2500))
+
+        return clearInterval(timer);
     },[thumbnail.nowSelect])
     return(
         <div>
