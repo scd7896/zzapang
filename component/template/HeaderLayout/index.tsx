@@ -1,6 +1,7 @@
 import * as React from 'react'
 import CategoryButton from '../../atoms/CategoryButton'
 import HeaderLink from '../../atoms/HeaderLink'
+import SelectCategory from '../../atoms/SelectCategory';
 import './styles.scss'
 const HeaderLayout = () => {
     const testFunc = () => {
@@ -11,11 +12,16 @@ const HeaderLayout = () => {
             <section className="header-content-section">
                 <CategoryButton onMouseOver={testFunc}/>
                 <section className="header-right-wrapper">
-                    <img src="http://image7.coupangcdn.com/image/coupang/common/logo_coupang_w350.png" width="174px" height="41px"/>
+                    <div className="header-title-wrapper">
+                        <img src="http://image7.coupangcdn.com/image/coupang/common/logo_coupang_w350.png" width="174px" height="41px"/>
+                        <SelectCategory />
+                    </div>
+
                     <div className=".header-searchbar-wrapper">
                         <HeaderLink url="www.naver.com" text="네이버로" 
                         iconImg="https://w.namu.la/s/1b00344db7bc52dd507bf5f4f11d2e7c6278885e4a67c5f95f2e88fde5a589f42b7ab31762c52fcd134945c2b9e63b5043d67b335f3055f508604cd5a4c0302c223f10ed4eb659f8bbe89b3421bbfc77fd255cff40a90b6171d694eedc210dd5" 
                         isNew={true}/>
+                        
                     </div>
                 </section>
             </section>
