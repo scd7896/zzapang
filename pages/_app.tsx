@@ -5,6 +5,7 @@ import App, { AppContext }  from 'next/app';
 import { Provider } from 'react-redux';
 import { createStore, compose, applyMiddleware, Store } from 'redux';
 import { composeWithDevTools } from 'redux-devtools-extension';
+import HeaderLayout from '../component/template/HeaderLayout'
 import reducer from '../reducer'
 
 class MyApp extends App {
@@ -19,6 +20,7 @@ class MyApp extends App {
         const { Component, pageProps, store } = this.props as any;
         return(
             <Provider store={store}>
+                <HeaderLayout />
                 <Component {...pageProps} />
             </Provider>
         )

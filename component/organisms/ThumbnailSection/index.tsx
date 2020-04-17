@@ -12,7 +12,7 @@ export interface ThumbnailSectionProps {
 const ThumbnailSection = ({ bigThumbnailImageDatas, snapShotDatas, nowSelect }: ThumbnailSectionProps) => {
     const [cnt, setCnt] = useState(0);
     useEffect(()=>{
-        if(cnt > bigThumbnailImageDatas.length) {
+        if(cnt >= bigThumbnailImageDatas.length) {
             return;
         }
         
