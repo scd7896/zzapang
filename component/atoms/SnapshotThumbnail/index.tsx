@@ -16,7 +16,7 @@ const SnapshotThumbnail = ({ imageUrl, title, index }: SnapshotThumbnailProps) =
     }
 
     return (
-        <li className={ nowSelect === index ? "thumbnail-selected" : "" } onMouseOver={onMouseOverEvent}>
+        <li className={ nowSelect === index ? "thumbnail-item selected" : "thumbnail-item" } onMouseOver={onMouseOverEvent}>
             <img src={ imageUrl } width="180px" height="60px" alt={title}/>
         </li>
     )

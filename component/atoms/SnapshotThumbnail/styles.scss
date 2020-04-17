@@ -1,4 +1,13 @@
-.thumbnail-selected {
-    border: 2px solid blue;
-    box-sizing: content-box;
-}
+
+
+.thumbnail-item {
+    list-style: none;
+    padding: 0px;
+    background-color: white;
+    margin-bottom: 0px; 
+    position:relative;
+    &.selected {
+        border: 2px solid blue;
+    }
+  }
+ 
