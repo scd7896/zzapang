@@ -5,6 +5,7 @@ const test = () => {
         <div>
             hello ci test
             ㅎㅎㅎㅎ
+            <p>아무튼 더 늘려보자</p>
         </div>
     )
 }
