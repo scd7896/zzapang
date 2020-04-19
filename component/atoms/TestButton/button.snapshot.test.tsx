@@ -1,9 +1,12 @@
 import * as React from 'react'
-import Button from './index';
-import * as renderer from 'react-test-renderer'
+import {mount} from 'enzyme'
+import IndexPage from './index'
 
-it('renders correctly', () => {
-    console.log(renderer)
-    const tree = renderer.create(<Button buttonText="Some Text" />).toJSON()
-    expect(tree).toMatchSnapshot()
+describe('Pages', () => {
+  describe('Index', () => {
+    it('should render without throwing an error', function () {
+      const wrap = mount(<IndexPage buttonText={"Hello world"}/>)
+      expect(wrap.find('button').text()).toBe('Hello world')
+    })
+  })  
 })
