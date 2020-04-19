@@ -4,9 +4,9 @@
   "description": "",
   "main": "index.js",
   "scripts": {
-    "dev": "next",
+    "dev": "pm2 start server.js --env development",
     "build": "next build",
-    "start": "next start"
+    "start": "pm2 start server.js NODE_ENV=production"
   },
   "keywords": [],
   "author": "",

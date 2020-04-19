@@ -9,18 +9,11 @@ const prod = process.env.NODE_ENV === 'production';
 const morgan = require('morgan')
 const uuid = require('uuid')
 
-morgan.token('id', function getId(req, res){
-    return req.id
-})
-function assignId (req, res, next) {
-    req.id = uuid.v4()
-    next()
-  }
+
 app.prepare().then(()=>{
     const server = express()
     server.use(express.json())
     server.use(express.urlencoded({extended: true}))
-    server.use(assignId)
     server.use(morgan('common',{
         stream : fs.createWriteStream(path.join(__dirname, 'logs/access.log'), { flags: 'a+' })
     }))
@@ -29,6 +22,6 @@ app.prepare().then(()=>{
         return handle(req,res);
     })
     server.listen(prod? process.env.PORT : 10023,()=>{
-        console.log('프론트 서버는 10023')
+        console.log(`프론트 서버는 ${process.env.PORT}`)
     })
 })
