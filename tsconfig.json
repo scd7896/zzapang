@@ -14,9 +14,14 @@
     "esModuleInterop": true,
     "module": "esnext",
     "moduleResolution": "node",
-    "jsx": "react",
-    "typeRoots": ["./types", "./action"],
-    "types": []
+    "jsx": "preserve",
+    "typeRoots": [
+      "./types",
+      "./action"
+    ],
+    "types": [],
+    "resolveJsonModule": true,
+    "isolatedModules": true
   },
   "exclude": [
     "node_modules"
@@ -24,6 +29,7 @@
   "include": [
     "next-env.d.ts",
     "**/*.ts",
-    "**/*.tsx", "setupTests.js"
+    "**/*.tsx",
+    "setupTests.js"
   ]
 }
