@@ -34,13 +34,13 @@ const SelectCategory = () => {
         let observer;
         const listRef = document.querySelector(".select-ul-wrapper")!;
         const body = document.querySelector("body")!;
-        const toggleButton = document.querySelector(".toggle-click-wrapper");
-        toggleButton?.addEventListener("click", toggleIsOpen);
+        const toggleButton: Element = document.querySelector(".toggle-title-button")!;
+        toggleButton.addEventListener("click", toggleIsOpen);
         observer = new IntersectionObserver((entries, observer) => {
             entries.forEach((entry) => {
                 if (isOpen) {
                     body.addEventListener("click", toggleIsOpen);
-                    toggleButton?.removeEventListener("click", toggleIsOpen);
+                    toggleButton.removeEventListener("click", toggleIsOpen);
                 } else {
                     body.removeEventListener("click", toggleIsOpen);
                 }
@@ -49,7 +49,7 @@ const SelectCategory = () => {
         });
         observer.observe(listRef);
         return () => {
-            toggleButton?.removeEventListener("click", toggleIsOpen);
+            toggleButton.removeEventListener("click", toggleIsOpen);
             body.removeEventListener("click", toggleIsOpen);
         };
     });
@@ -57,6 +57,7 @@ const SelectCategory = () => {
     return (
         <div className="select-category-wrapper">
             <div className="toggle-title-button">
+                <input type="hidden" name="category" value={selectKeyword}/>
                 <div className="toggle-click-wrapper">{selectKeyword}</div>
             </div>
             <ul className="select-ul-wrapper" style={{ display: isOpen ? "block" : "none" }}>

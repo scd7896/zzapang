@@ -1,7 +1,9 @@
 import * as React from 'react'
 import CategoryButton from '../../atoms/CategoryButton'
 import HeaderLink from '../../atoms/HeaderLink'
-import SelectCategory from '../../atoms/SelectCategory';
+import SearchForm from '../../molecules/SearchForm'
+
+
 import './styles.scss'
 const HeaderLayout = () => {
     const testFunc = () => {
@@ -14,7 +16,7 @@ const HeaderLayout = () => {
                 <section className="header-right-wrapper">
                     <div className="header-title-wrapper">
                         <img src="http://image7.coupangcdn.com/image/coupang/common/logo_coupang_w350.png" width="174px" height="41px"/>
-                        <SelectCategory />
+                        <SearchForm />
                     </div>
 
                     <div className=".header-searchbar-wrapper">

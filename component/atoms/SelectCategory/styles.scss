@@ -1,12 +1,19 @@
 .toggle-title-button {
+    display: flex;
+    align-items: center;
+    padding-left: 5px;
     cursor: pointer;
+    width: 134px;
+    border-right: 1px solid #ddd;    
 }
 .select-category-wrapper {
     display: flex;
+    position: relative;
 }
 .select-ul-wrapper {
     position: absolute;
-    height: 100px;
+    top: 30px;
+    height: 250px;
     width: 125px;
     overflow-y: scroll;
     background-color: white;

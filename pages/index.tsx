@@ -5,7 +5,6 @@ import { useDispatch, useSelector } from 'react-redux';
 import { ThumbnailList } from '../dummyData'
 import { setTestTumbnail, rotateThumbnail } from '../action/thumbnail';
 import IndexTemplate from '../component/template/root';
-import ThumbnailSection from '../component/organisms/ThumbnailSection'
 import './styles.scss'
 const Home: NextPage<{ userAgent: string }> = ({ userAgent }) => {
     const thumbnail: Thumbnail = useSelector<RootStore>(state => state.thumbnail) as Thumbnail;    
