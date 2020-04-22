@@ -1,0 +1,8 @@
+.basket-wrapper {
+    position: relative;
+    margin-left: 20px;
+}
+
+.basket-wrapper:hover ul.basket-list-ul {
+    display: block;
+}

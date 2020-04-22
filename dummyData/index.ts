@@ -56,3 +56,17 @@ export const ThumbnailList = {
         
     }]
 }
+
+export const basketDummyList: Array<BasketItemData> = [{
+    url: "http://www.coupang.com/vp/products/45014911?vendorItemId=3379446588",
+    img: "//thumbnail10.coupangcdn.com/thumbnails/remote/230x230ex/image/product/image/vendoritem/2018/10/22/3379446588/dc2db1ba-12de-4e62-bcbe-2ee6067d97cc.jpg",
+    description: "동원 리챔 프리미엄, 200g, 4개입"
+},{
+    url: "https://www.coupang.com/vp/products/185410993?vendorItemId=4427885240",
+    img: "//thumbnail7.coupangcdn.com/thumbnails/remote/230x230ex/image/retail/images/2019/02/11/14/6/e14841f3-63ff-4dc9-8996-7fc457cc50ce.jpg",
+    description: "Android Studio를 활용한 안드로이드 프로그래밍, 한빛아카데미"
+},{
+    url: "http://www.coupang.com/vp/products/45014911?vendorItemId=3379446588",
+    img: "//thumbnail10.coupangcdn.com/thumbnails/remote/230x230ex/image/product/image/vendoritem/2018/10/22/3379446588/dc2db1ba-12de-4e62-bcbe-2ee6067d97cc.jpg",
+    description: "동원 리챔 프리미엄, 200g, 4개입"
+}]
