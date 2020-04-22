@@ -10,3 +10,9 @@ interface snapShotImageData {
 interface RootStore {
     thumbnail: Thumbnail
 }
+
+interface BasketItemData {
+    url: string,
+    description: string,
+    img: string
+}
