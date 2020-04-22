@@ -2,10 +2,10 @@ import * as React from 'react'
 import CategoryButton from '../../atoms/CategoryButton'
 import HeaderLink from '../../atoms/HeaderLink'
 import SearchForm from '../../molecules/SearchForm'
-
+import MyPageMenu from '../../organisms/MyPageMenu'
+import Basket from '../../organisms/Basket'
 
 import './styles.scss'
-import Basket from '../../organisms/Basket'
 const HeaderLayout = () => {
     const testFunc = () => {
         console.log('마우스 오버됨')
@@ -18,7 +18,7 @@ const HeaderLayout = () => {
                     <div className="header-title-wrapper">
                         <img src="http://image7.coupangcdn.com/image/coupang/common/logo_coupang_w350.png" width="174px" height="41px"/>
                         <SearchForm />
-                        <button>마이쿠팡</button>
+                        <MyPageMenu/>
                         <Basket />
                     </div>
 
