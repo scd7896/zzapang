@@ -3,7 +3,7 @@ import { useState, useEffect } from 'react';
 import { basketDummyList } from '../../../dummyData'
 
 import BasketList from '../../molecules/BasketList';
-import BasketButton from '../../atoms/Basket/Button';
+import HeaderIcon from '../../atoms/HeaderIcon';
 import BasketCount from '../../atoms/Basket/Count';
 import './styles.scss'
 const Basket = () => {
@@ -16,7 +16,7 @@ const Basket = () => {
         <div className="basket-wrapper" 
             onMouseOver={ ()=>{setIsRender(true)} }
             onMouseOut={ ()=>{setIsRender(false)} }>
-            <BasketButton />
+            <HeaderIcon className="basket-button">장바구니</HeaderIcon>
             {
                 basketList !== undefined &&  (
                     <div>
