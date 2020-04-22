@@ -1,8 +1,17 @@
 .priview-product {
     width: 260px;
-    height: 72px;
+    height: 50px;
     padding: 10px 0;
+    font-size: 8px;
     border-bottom: 1px solid #eee;
     position: relative;
-    background-image: none;
+    
+}
+
+.basket-item-contents {
+    display: flex;
+    padding: 10px 5px;
+    div {
+        padding: 3px;
+    }
 }

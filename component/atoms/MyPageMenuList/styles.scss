@@ -1,0 +1,13 @@
+.mypage-menu-ul {
+    display: none;
+    position: absolute;
+    z-index: 3;
+    background-color: white;
+    width: 60px;
+    font-size: 8px;
+    top: 30px;
+    left: -5px;
+    li {
+        padding: 8px;
+    }
+}

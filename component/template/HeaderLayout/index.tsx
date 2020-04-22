@@ -2,7 +2,8 @@ import * as React from 'react'
 import CategoryButton from '../../atoms/CategoryButton'
 import HeaderLink from '../../atoms/HeaderLink'
 import SearchForm from '../../molecules/SearchForm'
-
+import MyPageMenu from '../../organisms/MyPageMenu'
+import Basket from '../../organisms/Basket'
 
 import './styles.scss'
 const HeaderLayout = () => {
@@ -17,6 +18,8 @@ const HeaderLayout = () => {
                     <div className="header-title-wrapper">
                         <img src="http://image7.coupangcdn.com/image/coupang/common/logo_coupang_w350.png" width="174px" height="41px"/>
                         <SearchForm />
+                        <MyPageMenu/>
+                        <Basket />
                     </div>
 
                     <div className=".header-searchbar-wrapper">
