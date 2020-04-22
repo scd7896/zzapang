@@ -70,3 +70,13 @@ export const basketDummyList: Array<BasketItemData> = [{
     img: "//thumbnail10.coupangcdn.com/thumbnails/remote/230x230ex/image/product/image/vendoritem/2018/10/22/3379446588/dc2db1ba-12de-4e62-bcbe-2ee6067d97cc.jpg",
     description: "동원 리챔 프리미엄, 200g, 4개입"
 }]
+
+export const bannerImages = ["https://static.coupangcdn.com/ya/cmg_paperboy/image/1587370966790/C2_1_%EB%82%A8%EC%96%91.jpg",
+"https://static.coupangcdn.com/ya/cmg_paperboy/image/1587370966790/C2_2_%EC%83%A4%EB%B1%8C%EC%8A%A4.jpg",
+"https://static.coupangcdn.com/ya/cmg_paperboy/image/1587370966790/C2_3_%ED%8E%98%EB%B8%8C%EB%A6%AC%EC%A6%88.jpg",
+"https://static.coupangcdn.com/ya/cmg_paperboy/image/1587370966790/C2_4_%EC%B2%B4%EB%A6%AC%EB%B8%94%EB%9F%AC%EC%8D%B8.jpg",
+"https://static.coupangcdn.com/ya/cmg_paperboy/image/1587370966790/C2_5_%EC%82%BC%EC%84%B1.jpg",
+"https://static.coupangcdn.com/ya/cmg_paperboy/image/1587370966790/C2_6_%ED%86%A0%EC%9D%B4%ED%8A%B8%EB%A1%A0.jpg",
+"https://static.coupangcdn.com/ya/cmg_paperboy/image/1587370966790/C2_7_%EB%8B%A5%ED%84%B0%EB%B0%A9%EA%B8%B0%EC%9B%90.jpg",
+"https://static.coupangcdn.com/ya/cmg_paperboy/image/1587370966790/C2_8_%EC%88%9C%EC%9E%91%26%EB%B0%B1%EB%85%84%EB%8F%99%EC%95%88.jpg",
+"https://static.coupangcdn.com/ya/cmg_paperboy/image/1587370966790/C2_9_%ED%82%A5%EB%B3%B4%EB%93%9C.jpg"]

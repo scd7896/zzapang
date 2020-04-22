@@ -21,9 +21,9 @@ const Home: NextPage<{ userAgent: string }> = ({ userAgent }) => {
         return clearInterval(timer);
     },[thumbnail.nowSelect])
     return(
-        <div>
+        <main>
             <IndexTemplate thumbnail={thumbnail} />
-        </div>
+        </main>
     )
 }
 Home.getInitialProps = async ({req, store}) => {
