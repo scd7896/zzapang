@@ -9,7 +9,7 @@ describe('searchButton Test', function(){
       const input = shallow(<SearchInput />)
       input.simulate('change', { currentTarget: { value: 'testInput' }})
       expect(input.find('input').props().value).toBe('testInput')
-      button.simulate('click', { event: {value: null}})
+      button.simulate('click', { event: {value: 'aaa'}})
       setTimeout(()=>{
         expect(input.find('input').props().value).toBe('')
       }, 1000)

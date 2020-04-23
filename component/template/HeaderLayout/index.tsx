@@ -1,4 +1,5 @@
 import * as React from 'react'
+import Link from 'next/link'
 import CategoryButton from '../../atoms/CategoryButton'
 import HeaderLink from '../../atoms/HeaderLink'
 import SearchForm from '../../molecules/SearchForm'
@@ -42,7 +43,7 @@ const HeaderLayout = () => {
                     </menu>
                     <menu>
                         <li>
-                            로그인
+                            <Link href="/login"><a>로그인</a></Link>
                         </li>
                         <li>
                             회원가입
