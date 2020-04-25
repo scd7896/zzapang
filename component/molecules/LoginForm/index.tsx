@@ -5,7 +5,7 @@ import SubmitButton from '../../atoms/Login/SubmitButton'
 const LoginForm = () => {
     return (
         <article>
-            <form>
+            <form method="POST" action="apilogin">
                 <LoginInput name="id" type="text"/>
                 <LoginInput name="password" type="password"/>
                 <SubmitButton />

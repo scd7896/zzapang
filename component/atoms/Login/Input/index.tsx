@@ -1,5 +1,6 @@
 import * as React from 'react'
 import { useState } from 'react';
+import './styles.scss'
 type LoginInputProps = {
     type: string,
     name: string
