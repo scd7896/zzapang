@@ -1,8 +1,10 @@
 import * as React from 'react'
 
+import './styles.scss';
+
 const SubmitButton = () => {
     return (
-        <button type="submit">로그인</button>
+        <button className="login-button-style" type="submit">로그인</button>
     )
 }
 

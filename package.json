@@ -4,7 +4,7 @@
   "description": "",
   "main": "index.js",
   "scripts": {
-    "dev": "pm2 start ecosystem.config.js",
+    "dev": "next",
     "build": "next build",
     "test": "jest",
     "test:watch": "jest --watch",

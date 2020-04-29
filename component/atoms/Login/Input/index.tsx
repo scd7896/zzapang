@@ -11,10 +11,9 @@ const LoginInput = ({ type, name }: LoginInputProps) => {
         setTextValue(event.target.value)
     }
     return (
-        <div>
-            <span>{ name }</span>
-            <input className={`login-input-${name}`}
-                name={name} 
+        <div className={`login-input-${name}`}>
+            <span>{ name.toUpperCase() }</span>
+            <input name={name} 
                 type={type} 
                 value={textValue} 
                 onChange={onValueInput}

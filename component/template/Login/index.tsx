@@ -1,9 +1,11 @@
 import * as React from 'react'
 import LoginForm from '../../molecules/LoginForm'
 
+import './styles.scss';
+
 const LoginTemplate = () => {
     return (
-        <section>
+        <section className="login-template-section">
             <LoginForm />
         </section>
     )
