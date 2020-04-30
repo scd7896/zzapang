@@ -19,7 +19,6 @@ const Index = ({ thumbnail }: IndexTemplateProps) => {
   const [isCategoryRender, setIsCategoryRender] = useState<boolean>(false);
   const categoryScrollHandler = (event: Event) => {
     if (isCategoryRender) {
-      
       window.removeEventListener('scroll', categoryScrollHandler);
       return;
     }
@@ -64,7 +63,13 @@ const Index = ({ thumbnail }: IndexTemplateProps) => {
           <CategoryNav />
           { randomColors &&
           randomColors.map((color, index) => {
-            return <CategorySection categoryItems={categoryDummys} bigImageUrl={bigImage} color={color} key={index}/>  
+            return ( 
+              <CategorySection 
+                categoryItems={categoryDummys} 
+                bigImageUrl={bigImage} 
+                color={color} 
+                key={index}/>  
+            )
           })}
         </section>
       }

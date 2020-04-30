@@ -11,7 +11,8 @@ interface RootStore {
   thumbnail: Thumbnail;
 }
 interface ImageComponentProps {
-  url: string
+  url: string,
+  isRender: boolean
 }
 interface BasketItemData {
   url: string;

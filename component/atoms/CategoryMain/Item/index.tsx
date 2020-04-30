@@ -6,13 +6,13 @@ export interface CategoryMainItemProps {
   imageUrl: string,
   description: string,
   linkUrl: string,
-  payment: number
+  payment: number,
 }
 const CategoryMainItem = ({ imageUrl, description, linkUrl, payment }: CategoryMainItemProps) => {
   return (
     <li className="cateogrymain-item-card">
       <a href={linkUrl}>
-        <CategoryMainImage url={imageUrl} />
+        <CategoryMainImage url={imageUrl} isRender={false} />
         <p className="category-description">{description}</p>
         <span className="payment-categoty"><strong>{payment}</strong> 원</span>
       </a>

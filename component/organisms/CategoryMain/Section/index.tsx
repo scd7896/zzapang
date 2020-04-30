@@ -17,7 +17,7 @@ const CategorySection = ({ categoryItems, bigImageUrl, color }: CategorySectionP
     <section className="category-section-wrapper"
     style={{borderTop: '2px solid '+color}}>
       <CategoryMainTitle text="테스트카테고리" url="https://www.naver.com" color={color} />
-      <CategoryMainBigImage url={bigImageUrl} />
+      <CategoryMainBigImage url={bigImageUrl} isRender={false} />
       <CategoryMainItems categoryItems={categoryItems} />
     </section>
   )
