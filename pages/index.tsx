@@ -2,13 +2,12 @@ import * as React from "react";
 import { useEffect, useState } from "react";
 import { NextPage } from "next";
 import { useDispatch, useSelector } from "react-redux";
-import { ThumbnailList, oneCategoryItem, bigImage } from "../dummyData";
+import { ThumbnailList } from "../dummyData";
 import { setTestTumbnail, rotateThumbnail } from "../action/thumbnail";
 import IndexTemplate from "../component/template/root";
-import CategoryMainItem from "../component/atoms/CategoryMain/Item";
 
 import "./styles.scss";
-import CategoryMainBigImage from "../component/atoms/CategoryMain/BigImage";
+
 const Home: NextPage<{ userAgent: string }> = ({ userAgent }) => {
   const thumbnail: Thumbnail = useSelector<RootStore>(
     (state) => state.thumbnail
@@ -30,12 +29,6 @@ const Home: NextPage<{ userAgent: string }> = ({ userAgent }) => {
   return (
     <main>
       <IndexTemplate thumbnail={thumbnail} />
-      <div style={{display: 'flex'}}>
-        <CategoryMainItem {...oneCategoryItem}/>
-        <CategoryMainItem {...oneCategoryItem}/>
-        <CategoryMainItem {...oneCategoryItem}/>
-      </div>
-      <CategoryMainBigImage url={bigImage} />
     </main>
   );
 };

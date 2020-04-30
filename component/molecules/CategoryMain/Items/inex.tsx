@@ -2,12 +2,16 @@ import * as React from 'react'
 import { useState } from 'react';
 import CategoryMainItem, { CategoryMainItemProps } from '../../../atoms/CategoryMain/Item';
 
-const CategoryMainItems = () => {
-  const [itemDatas, setItemDatas] = useState<Array<CategoryMainItemProps>>([])
+import './styles.scss';
+interface CategoryMainItemsProps {
+  categoryItems: CategoryMainItemProps[]
+}
+const CategoryMainItems = ({ categoryItems }: CategoryMainItemsProps) => {
+
   return (
-    <section>
+    <ul className="item-three-container">
       {
-        itemDatas.map((itemData, index) => {
+        categoryItems.map((itemData, index) => {
           return (
             <CategoryMainItem
             key={index} 
@@ -18,7 +22,7 @@ const CategoryMainItems = () => {
           )
         })
       }
-    </section>
+    </ul>
   )
 }
 
