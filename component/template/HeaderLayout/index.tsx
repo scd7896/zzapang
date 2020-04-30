@@ -17,11 +17,15 @@ const HeaderLayout = () => {
         <CategoryButton onMouseOver={testFunc} />
         <section className="header-right-wrapper">
           <div className="header-title-wrapper">
-            <img
-              src="http://image7.coupangcdn.com/image/coupang/common/logo_coupang_w350.png"
-              width="174px"
-              height="41px"
-            />
+            <Link href="/">
+              <a>
+                <img
+                  src="http://image7.coupangcdn.com/image/coupang/common/logo_coupang_w350.png"
+                  width="174px"
+                  height="41px"
+                />
+              </a>
+            </Link>
             <SearchForm />
             <MyPageMenu />
             <Basket />
@@ -49,7 +53,11 @@ const HeaderLayout = () => {
                 <a>로그인</a>
               </Link>
             </li>
-            <li>회원가입</li>
+            <li>
+              <Link href="/signup">
+                <a>회원가입</a>
+              </Link>
+            </li>
             <li>고객센터</li>
           </menu>
         </section>
