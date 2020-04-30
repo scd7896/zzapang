@@ -2,7 +2,7 @@ import * as React from 'react';
 import { useState, useEffect } from 'react';
 
 import './styles.scss';
-import CateGoryNavIcon from '../../atoms/CategoryNav/Icon';
+import CateGoryNavIcon from '../../atoms/CategoryMain/Icon';
 
 const CategoryNav = () => {
   const [dummyCategories, setDummyCategories] = useState(['#ffee00', '#66ee92', '#998811', '#ff0000', '#00ff00']);
