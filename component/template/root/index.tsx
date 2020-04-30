@@ -5,12 +5,13 @@ import ThumbnailSection from "../../organisms/ThumbnailSection";
 import TodayHeadImage from "../../atoms/TodayHeadImage";
 
 import "./styles.scss";
+import CategoryNav from "../../molecules/CategoryNav";
 type IndexTemplateProps = {
   thumbnail: Thumbnail;
 };
 const Index = ({ thumbnail }: IndexTemplateProps) => {
   return (
-    <div>
+    <section className="main-template-wrapper">
       <ThumbnailSection
         nowSelect={thumbnail.nowSelect}
         bigThumbnailImageDatas={thumbnail.bigImageDatas}
@@ -21,7 +22,10 @@ const Index = ({ thumbnail }: IndexTemplateProps) => {
           <TodayHeadImage href="" isSelected={true} />
         </article>
       </section>
-    </div>
+      <section className="main-categoty-view">
+        <CategoryNav />
+      </section>
+    </section>
   );
 };
 
