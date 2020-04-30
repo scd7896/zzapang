@@ -7,12 +7,20 @@ export interface CategoryMainItemProps {
   description: string,
   linkUrl: string,
   payment: number,
+  isRender: boolean
 }
-const CategoryMainItem = ({ imageUrl, description, linkUrl, payment }: CategoryMainItemProps) => {
+
+export interface CategoryMainItemNeedData {
+  imageUrl: string,
+  description: string,
+  linkUrl: string,
+  payment: number,
+}
+const CategoryMainItem = ({ imageUrl, description, linkUrl, payment, isRender }: CategoryMainItemProps) => {
   return (
     <li className="cateogrymain-item-card">
       <a href={linkUrl}>
-        <CategoryMainImage url={imageUrl} isRender={false} />
+        <CategoryMainImage url={imageUrl} isRender={isRender} />
         <p className="category-description">{description}</p>
         <span className="payment-categoty"><strong>{payment}</strong> 원</span>
       </a>

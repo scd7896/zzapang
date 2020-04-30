@@ -1,5 +1,5 @@
 import * as React from "react";
-import { useEffect, useState } from "react";
+import { useEffect, useState, useCallback } from "react";
 
 import ThumbnailSection from "../../organisms/ThumbnailSection";
 import TodayHeadImage from "../../atoms/TodayHeadImage";
@@ -17,6 +17,8 @@ const categoryDummys = [oneCategoryItem,oneCategoryItem,oneCategoryItem,oneCateg
 const Index = ({ thumbnail }: IndexTemplateProps) => {
   const [randomColors, setRandomColors] = useState<Array<string>>([]);
   const [isCategoryRender, setIsCategoryRender] = useState<boolean>(false);
+  const [baseHeight, setBaseHeight] = useState<number>(1540);
+  const increaseValue = 600;
   const categoryScrollHandler = (event: Event) => {
     if (isCategoryRender) {
       window.removeEventListener('scroll', categoryScrollHandler);
@@ -32,19 +34,43 @@ const Index = ({ thumbnail }: IndexTemplateProps) => {
     }
   }
 
+  const lazyLoadingImage = useCallback(() => {
+    const scrollHeight = document.documentElement.scrollHeight;
+    const clientHeight = document.documentElement.clientHeight;
+    const scrollTop = document.documentElement.scrollTop;
+    const scrollPos = scrollHeight - scrollTop;
+    
+    if(scrollTop >= baseHeight) {
+      const nextValue = baseHeight + increaseValue
+      setBaseHeight(nextValue)
+    }
+    if(clientHeight === scrollPos) {
+      window.removeEventListener('scroll', lazyLoadingImage);
+    }
+  },[baseHeight]);
+  
   useEffect(()=>{
     const nextArr = []
     for (let i = 0 ; i < 9; i++) {
       nextArr.push(getRandomColor())
     }
     setRandomColors(nextArr);
+  }, [])
 
-    window.addEventListener('scroll', categoryScrollHandler)
+  useEffect(()=>{
+    
+
+    if (isCategoryRender) {
+      window.addEventListener('scroll', lazyLoadingImage)
+    } else {
+      window.addEventListener('scroll', categoryScrollHandler)
+    }
 
     return () => {
-      window.removeEventListener('scroll', categoryScrollHandler);
+      window.removeEventListener('scroll', categoryScrollHandler)
+      window.removeEventListener('scroll', lazyLoadingImage)
     }
-  }, [])
+  }, [isCategoryRender, baseHeight])
   return (
     <section className="main-template-wrapper">
       <ThumbnailSection
@@ -63,8 +89,10 @@ const Index = ({ thumbnail }: IndexTemplateProps) => {
           <CategoryNav />
           { randomColors &&
           randomColors.map((color, index) => {
+            const check = (baseHeight - 940) / increaseValue > index + 1
             return ( 
               <CategorySection 
+                isRender={check}
                 categoryItems={categoryDummys} 
                 bigImageUrl={bigImage} 
                 color={color} 

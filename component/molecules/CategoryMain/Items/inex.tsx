@@ -1,12 +1,13 @@
 import * as React from 'react'
 import { useState } from 'react';
-import CategoryMainItem, { CategoryMainItemProps } from '../../../atoms/CategoryMain/Item';
+import CategoryMainItem, { CategoryMainItemProps, CategoryMainItemNeedData } from '../../../atoms/CategoryMain/Item';
 
 import './styles.scss';
 interface CategoryMainItemsProps {
-  categoryItems: CategoryMainItemProps[]
+  categoryItems: CategoryMainItemNeedData[],
+  isRender: boolean
 }
-const CategoryMainItems = ({ categoryItems }: CategoryMainItemsProps) => {
+const CategoryMainItems = ({ categoryItems, isRender }: CategoryMainItemsProps) => {
 
   return (
     <ul className="item-three-container">
@@ -18,7 +19,8 @@ const CategoryMainItems = ({ categoryItems }: CategoryMainItemsProps) => {
             imageUrl={itemData.imageUrl}
             linkUrl={itemData.linkUrl}
             payment={itemData.payment}
-            description={itemData.description} />
+            description={itemData.description}
+            isRender={isRender} />
           )
         })
       }
