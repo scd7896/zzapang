@@ -119,3 +119,9 @@ export const bannerImages = [
   "https://static.coupangcdn.com/ya/cmg_paperboy/image/1587370966790/C2_8_%EC%88%9C%EC%9E%91%26%EB%B0%B1%EB%85%84%EB%8F%99%EC%95%88.jpg",
   "https://static.coupangcdn.com/ya/cmg_paperboy/image/1587370966790/C2_9_%ED%82%A5%EB%B3%B4%EB%93%9C.jpg",
 ];
+
+export const oneCategoryItem = {
+  imageUrl: 'https://www.coupang.com/thumbnail9.coupangcdn.com/thumbnails/remote/160x160ex/image/retail/images/2019/10/28/11/0/2372afee-9b5e-4e3f-a812-b0e1b308c08f.jpg',
+  description: '피존 어쩌고 저쩌고 그리고 좀 기이이이이이이이일게에에에에',
+  payment: 8600
+}
