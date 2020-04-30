@@ -1,7 +1,7 @@
-import { combineReducers } from 'redux';
-import thumbnail from './thumbnail'
+import { combineReducers } from "redux";
+import thumbnail from "./thumbnail";
 const rootReducer = combineReducers({
-    thumbnail
-})
+  thumbnail,
+});
 
-export default rootReducer
+export default rootReducer;

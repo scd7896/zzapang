@@ -1,5 +1,5 @@
 export const postKind = {
-    nomal: 'nomal',
-    rocket: 'rocket',
-    regular: 'regular'
-}
+  nomal: "nomal",
+  rocket: "rocket",
+  regular: "regular",
+};

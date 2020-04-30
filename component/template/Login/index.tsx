@@ -1,14 +1,14 @@
-import * as React from 'react'
-import LoginForm from '../../molecules/LoginForm'
+import * as React from "react";
+import LoginForm from "../../molecules/LoginForm";
 
-import './styles.scss';
+import "./styles.scss";
 
 const LoginTemplate = () => {
-    return (
-        <section className="login-template-section">
-            <LoginForm />
-        </section>
-    )
-}
+  return (
+    <section className="login-template-section">
+      <LoginForm />
+    </section>
+  );
+};
 
 export default LoginTemplate;

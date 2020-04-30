@@ -1,20 +1,20 @@
 interface SnapShotData {
-    imageUrl: string;
-    title: string;
+  imageUrl: string;
+  title: string;
 }
 
 interface BigImageData {
-    bigImageUrl: string;
+  bigImageUrl: string;
 }
 
 interface Thumbnail {
-    nowSelect: number,
-    snapShotDatas: SnapShotData[],
-    bigImageDatas: BigImageData[],
-    timer: NodeJS.Timeout
+  nowSelect: number;
+  snapShotDatas: SnapShotData[];
+  bigImageDatas: BigImageData[];
+  timer: NodeJS.Timeout;
 }
 
 interface User {
-    userName: string | null,
-    userId: string | null,
+  userName: string | null;
+  userId: string | null;
 }

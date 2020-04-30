@@ -1,14 +1,14 @@
-import * as React from 'react'
-import './styles.scss';
+import * as React from "react";
+import "./styles.scss";
 interface BasketCountProps {
-    count: number
+  count: number;
 }
 const BasketCount = ({ count }: BasketCountProps) => {
-    return (
-        <div className="basket-count-icon">
-            <p>{ count }</p>
-        </div>
-    )
-}
+  return (
+    <div className="basket-count-icon">
+      <p>{count}</p>
+    </div>
+  );
+};
 
-export default BasketCount
+export default BasketCount;

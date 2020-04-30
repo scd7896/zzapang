@@ -1,14 +1,15 @@
 .login-input- {
-    &password, &id {
-        width: 400px;
-        span { 
-            font-size: 16px;
-            font-weight: bold;
-        }
-        input {
-            width: 100%;
-            height: 30px;
-        }   
-        margin-bottom: 40px;
+  &password,
+  &id {
+    width: 400px;
+    span {
+      font-size: 16px;
+      font-weight: bold;
     }
+    input {
+      width: 100%;
+      height: 30px;
+    }
+    margin-bottom: 40px;
+  }
 }

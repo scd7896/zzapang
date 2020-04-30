@@ -1,11 +1,10 @@
-import { SET_USERDATA_REQUEST } from "./actionTypes"
+import { SET_USERDATA_REQUEST } from "./actionTypes";
 
-const setUserDataRequest = (payload?: string) => {
+const setUserDataRequest = (payload: string | null) => {
   return {
     type: SET_USERDATA_REQUEST,
-    payload
-  }
-}
+    payload,
+  };
+};
 
-export type UserActionType = 
-| ReturnType <typeof setUserDataRequest>
+export type UserActionType = ReturnType<typeof setUserDataRequest>;

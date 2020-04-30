@@ -1,18 +1,18 @@
 interface BigImageData {
-    bigImageUrl: string,
-    title: string
+  bigImageUrl: string;
+  title: string;
 }
 interface snapShotImageData {
-    imageUrl: string,
-    title: string
+  imageUrl: string;
+  title: string;
 }
 
 interface RootStore {
-    thumbnail: Thumbnail
+  thumbnail: Thumbnail;
 }
 
 interface BasketItemData {
-    url: string,
-    description: string,
-    img: string
+  url: string;
+  description: string;
+  img: string;
 }
