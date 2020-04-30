@@ -1,5 +1,7 @@
 import * as React from 'react';
 import CategoryMainImage from '../Image';
+
+import './styles.scss';
 export interface CategoryMainItemProps {
   imageUrl: string,
   description: string,
@@ -11,8 +13,8 @@ const CategoryMainItem = ({ imageUrl, description, linkUrl, payment }: CategoryM
     <article className="cateogrymain-item-card">
       <a href={linkUrl}>
         <CategoryMainImage url={imageUrl} />
-        <p>{description}</p>
-        <p><span>{payment}</span> 원</p>
+        <p className="category-description">{description}</p>
+        <span className="payment-categoty"><strong>{payment}</strong> 원</span>
       </a>
     </article>
   )

@@ -5,7 +5,7 @@ import './styles.scss';
 const CategoryMainImage = ({ url }: ImageComponentProps) => {
   return (
     <div className="category-nomal-image">
-      {url}
+      <img src={url}/>
     </div>
   )
 }

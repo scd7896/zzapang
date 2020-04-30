@@ -5,7 +5,7 @@ import './styles.scss';
 const CategoryMainBigImage = ({ url }: ImageComponentProps) => {
   return (
     <div className="category-big-image">
-      {url}
+      <img src={url} />
     </div>
   )
 }
