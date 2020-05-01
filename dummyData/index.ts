@@ -119,3 +119,12 @@ export const bannerImages = [
   "https://static.coupangcdn.com/ya/cmg_paperboy/image/1587370966790/C2_8_%EC%88%9C%EC%9E%91%26%EB%B0%B1%EB%85%84%EB%8F%99%EC%95%88.jpg",
   "https://static.coupangcdn.com/ya/cmg_paperboy/image/1587370966790/C2_9_%ED%82%A5%EB%B3%B4%EB%93%9C.jpg",
 ];
+
+export const oneCategoryItem = {
+  imageUrl: '//thumbnail9.coupangcdn.com/thumbnails/remote/160x160ex/image/retail/images/2019/10/28/11/0/2372afee-9b5e-4e3f-a812-b0e1b308c08f.jpg',
+  description: '피존 어쩌고 저쩌고 그리고 좀 기이이이이이이이일게에에에에',
+  payment: 8600,
+  linkUrl: 'https://www.coupang.com/vp/products/328711960?itemId=1051205164&vendorItemId=5518010055&sourceType=srp_product_ads&from=home_CategoryBest_ranking&traid=home_CategoryBest_ranking&isAddedCart='
+};
+
+export const bigImage = "//thumbnail6.coupangcdn.com/thumbnails/remote/x/image/bannerunit/bannerunit_8ec7debf-b5bc-435d-9fd4-8709e2d1bb5d.jpg";

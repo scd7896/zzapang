@@ -10,7 +10,10 @@ interface snapShotImageData {
 interface RootStore {
   thumbnail: Thumbnail;
 }
-
+interface ImageComponentProps {
+  url: string,
+  isRender: boolean
+}
 interface BasketItemData {
   url: string;
   description: string;

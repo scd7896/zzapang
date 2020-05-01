@@ -1,3 +1,8 @@
+.main-template-wrapper {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
 .today-wrapper-section {
   display: flex;
   justify-content: center;
@@ -6,5 +11,10 @@
 .today-content-wrapper-article {
   width: 1020px;
   height: 1036px;
-  background-color: blue;
+}
+
+.main-categoty-view {
+  position: relative;
+  width: 1020px;
+  height: 1036px;
 }

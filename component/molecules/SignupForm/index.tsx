@@ -6,7 +6,7 @@ import "./styles.scss";
 
 const SignupForm = () => {
   return (
-    <form className="" method="POST" action="testtest">
+    <form method="POST" action="testtest">
       <SignupInput name="id" type="text" required={true} />
       <SignupInput name="password" type="password" required={true} />
       <SignupInput name="user_name" type="text" required={true} />

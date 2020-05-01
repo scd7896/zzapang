@@ -18,3 +18,14 @@ interface User {
   userName: string | null;
   userId: string | null;
 }
+interface CategoryData {
+  
+}
+
+interface SectionItem {
+  bigImageUrl: string,
+  categoryDatas: CategoryData[]
+}
+interface Category {
+  sectionItems: SectionItem[]
+}
