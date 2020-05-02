@@ -8,6 +8,8 @@ import CategorySection from "../../organisms/CategoryMain/Section";
 import { oneCategoryItem, bigImage } from '../../../dummyData/index';
 import { getRandomColor } from '../../../util/index';
 import "./styles.scss";
+import { useSelector, useDispatch } from "react-redux";
+import { setBaseScrollHeight } from '../../../action/scroll'
 
 type IndexTemplateProps = {
   thumbnail: Thumbnail;
@@ -15,9 +17,12 @@ type IndexTemplateProps = {
 
 const categoryDummys = [oneCategoryItem,oneCategoryItem,oneCategoryItem,oneCategoryItem,oneCategoryItem,oneCategoryItem];
 const Index = ({ thumbnail }: IndexTemplateProps) => {
+  const dispatch = useDispatch();
   const [randomColors, setRandomColors] = useState<Array<string>>([]);
   const [isCategoryRender, setIsCategoryRender] = useState<boolean>(false);
-  const [baseHeight, setBaseHeight] = useState<number>(1540);
+  
+  const baseHeight = useSelector<RootStore>(state => state.scroll.scrollHeight) as number;
+  
   const increaseValue = 600;
   const categoryScrollHandler = (event: Event) => {
     if (isCategoryRender) {
@@ -40,16 +45,16 @@ const Index = ({ thumbnail }: IndexTemplateProps) => {
     const scrollTop = document.documentElement.scrollTop;
     const scrollPos = scrollHeight - scrollTop;
     
-    if(scrollTop >= baseHeight) {
+    if (scrollTop >= baseHeight) {
       const nextValue = baseHeight + increaseValue
-      setBaseHeight(nextValue)
+      dispatch(setBaseScrollHeight(nextValue))
     }
-    if(clientHeight === scrollPos) {
+    if (clientHeight === scrollPos) {
       window.removeEventListener('scroll', lazyLoadingImage);
     }
   },[baseHeight]);
-  
-  useEffect(()=>{
+
+  useEffect(() => {
     const nextArr = []
     for (let i = 0 ; i < 9; i++) {
       nextArr.push(getRandomColor())
@@ -58,14 +63,11 @@ const Index = ({ thumbnail }: IndexTemplateProps) => {
   }, [])
 
   useEffect(()=>{
-    
-
     if (isCategoryRender) {
       window.addEventListener('scroll', lazyLoadingImage)
     } else {
       window.addEventListener('scroll', categoryScrollHandler)
     }
-
     return () => {
       window.removeEventListener('scroll', categoryScrollHandler)
       window.removeEventListener('scroll', lazyLoadingImage)
