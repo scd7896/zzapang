@@ -50,7 +50,7 @@ const Index = ({ thumbnail }: IndexTemplateProps) => {
       }
     } else {
         // upscroll code
-        if (scrollTop < baseHeight) {
+        if (scrollTop <= baseHeight - 600) {
           const nextValue = baseHeight - increaseValue
           dispatch(setBaseScrollHeight(nextValue))
         }
