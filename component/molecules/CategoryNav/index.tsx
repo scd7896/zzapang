@@ -24,7 +24,6 @@ const CategoryNav = () => {
   }, [isRender])
   useEffect(()=>{
     setNowSelect((baseHeight-1540)/600);
-    console.log(nowSelect);
   }, [baseHeight])
   useEffect(()=>{
     window.addEventListener('scroll', navScrollEventHandle);
