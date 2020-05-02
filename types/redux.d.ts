@@ -29,3 +29,7 @@ interface SectionItem {
 interface Category {
   sectionItems: SectionItem[]
 }
+
+interface Scroll {
+  scrollHeight: number
+}

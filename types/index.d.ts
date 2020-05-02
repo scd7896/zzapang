@@ -9,6 +9,7 @@ interface snapShotImageData {
 
 interface RootStore {
   thumbnail: Thumbnail;
+  scroll: Scroll;
 }
 interface ImageComponentProps {
   url: string,
