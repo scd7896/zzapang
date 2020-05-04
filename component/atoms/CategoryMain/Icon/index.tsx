@@ -8,6 +8,9 @@ interface CateGoryNavIconProps {
 }
 
 const CateGoryNavIcon = ({ isSelected, color }: CateGoryNavIconProps) => {
+  if (isSelected) {
+    console.log(color);
+  }
   return (
     <article className="category-icon-icon" 
       style={{ backgroundColor: isSelected ? color : "#000000" }} >

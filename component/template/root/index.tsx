@@ -7,6 +7,8 @@ import CategoryNav from "../../molecules/CategoryNav";
 import CategorySection from "../../organisms/CategoryMain/Section";
 import { oneCategoryItem, bigImage } from '../../../dummyData/index';
 import { getRandomColor } from '../../../util/index';
+import { useSelector, useDispatch } from "react-redux";
+import { setBaseScrollHeight } from '../../../action/scroll'
 import "./styles.scss";
 
 type IndexTemplateProps = {
@@ -15,9 +17,12 @@ type IndexTemplateProps = {
 
 const categoryDummys = [oneCategoryItem,oneCategoryItem,oneCategoryItem,oneCategoryItem,oneCategoryItem,oneCategoryItem];
 const Index = ({ thumbnail }: IndexTemplateProps) => {
+  const dispatch = useDispatch();
   const [randomColors, setRandomColors] = useState<Array<string>>([]);
   const [isCategoryRender, setIsCategoryRender] = useState<boolean>(false);
-  const [baseHeight, setBaseHeight] = useState<number>(640);
+  const [lastScrollTop, setLastScrollTop] = useState<number>(0);
+  const baseHeight = useSelector<RootStore>(state => state.scroll.scrollHeight) as number;
+  
   const increaseValue = 600;
   const categoryScrollHandler = (event: Event) => {
     if (isCategoryRender) {
@@ -35,21 +40,25 @@ const Index = ({ thumbnail }: IndexTemplateProps) => {
   }
 
   const lazyLoadingImage = useCallback(() => {
-    const scrollHeight = document.documentElement.scrollHeight;
-    const clientHeight = document.documentElement.clientHeight;
     const scrollTop = document.documentElement.scrollTop;
-    const scrollPos = scrollHeight - scrollTop;
-    
-    if(scrollTop >= baseHeight) {
-      const nextValue = baseHeight + increaseValue
-      setBaseHeight(nextValue)
+    const st = window.pageYOffset || document.documentElement.scrollTop;
+    if (st > lastScrollTop){
+      // downscroll code
+      if (scrollTop >= baseHeight) {
+        const nextValue = baseHeight + increaseValue
+        dispatch(setBaseScrollHeight(nextValue))
+      }
+    } else {
+        // upscroll code
+        if (scrollTop <= baseHeight - 600) {
+          const nextValue = baseHeight - increaseValue
+          dispatch(setBaseScrollHeight(nextValue))
+        }
     }
-    if(clientHeight === scrollPos) {
-      window.removeEventListener('scroll', lazyLoadingImage);
-    }
-  },[baseHeight]);
-  
-  useEffect(()=>{
+    setLastScrollTop(st <= 0 ? 0 : st);  
+  },[baseHeight, lastScrollTop]);
+
+  useEffect(() => {
     const nextArr = []
     for (let i = 0 ; i < 9; i++) {
       nextArr.push(getRandomColor())
@@ -58,14 +67,11 @@ const Index = ({ thumbnail }: IndexTemplateProps) => {
   }, [])
 
   useEffect(()=>{
-    
-
     if (isCategoryRender) {
       window.addEventListener('scroll', lazyLoadingImage)
     } else {
       window.addEventListener('scroll', categoryScrollHandler)
     }
-
     return () => {
       window.removeEventListener('scroll', categoryScrollHandler)
       window.removeEventListener('scroll', lazyLoadingImage)
