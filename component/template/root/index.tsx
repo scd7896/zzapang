@@ -17,7 +17,7 @@ const categoryDummys = [oneCategoryItem,oneCategoryItem,oneCategoryItem,oneCateg
 const Index = ({ thumbnail }: IndexTemplateProps) => {
   const [randomColors, setRandomColors] = useState<Array<string>>([]);
   const [isCategoryRender, setIsCategoryRender] = useState<boolean>(false);
-  const [baseHeight, setBaseHeight] = useState<number>(1540);
+  const [baseHeight, setBaseHeight] = useState<number>(640);
   const increaseValue = 600;
   const categoryScrollHandler = (event: Event) => {
     if (isCategoryRender) {
@@ -89,7 +89,7 @@ const Index = ({ thumbnail }: IndexTemplateProps) => {
           <CategoryNav />
           { randomColors &&
           randomColors.map((color, index) => {
-            const check = (baseHeight - 940) / increaseValue > index + 1
+            const check = (baseHeight - 640) / increaseValue > index + 1
             return ( 
               <CategorySection 
                 isRender={check}
