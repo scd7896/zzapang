@@ -9,7 +9,7 @@
     "test": "jest",
     "test:watch": "jest --watch",
     "test:coverage": "jest --coverage",
-    "start": "pm2 start ecosystem.config.js --env production"
+    "start": "cross-env NODE_ENV=production PORT=10023 pm2 start server.js --name \"FRONT\""
   },
   "keywords": [],
   "author": "",
@@ -19,6 +19,7 @@
     "@types/react-redux": "^7.1.7",
     "@zeit/next-sass": "^1.0.1",
     "babel-preset-env": "^1.7.0",
+    "cross-env": "^7.0.2",
     "express": "^4.17.1",
     "morgan": "^1.10.0",
     "nan": "^2.14.0",
