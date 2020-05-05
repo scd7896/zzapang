@@ -9,6 +9,7 @@
     "test": "jest",
     "test:watch": "jest --watch",
     "test:coverage": "jest --coverage",
+    "prestart": "pm2 kill",
     "start": "cross-env NODE_ENV=production PORT=10023 pm2 start server.js --name \"FRONT\""
   },
   "keywords": [],
