@@ -3,9 +3,7 @@ import SignUpTemplate from "../component/template/Signup";
 
 const signup = () => {
   return (
-    <section>
-      <SignUpTemplate />
-    </section>
+    <SignUpTemplate />
   );
 };
 

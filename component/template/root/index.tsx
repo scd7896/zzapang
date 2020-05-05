@@ -95,7 +95,7 @@ const Index = ({ thumbnail }: IndexTemplateProps) => {
           <CategoryNav />
           { randomColors &&
           randomColors.map((color, index) => {
-            const check = (baseHeight - 940) / increaseValue > index + 1
+            const check = (baseHeight - 640) / increaseValue > index + 1
             return ( 
               <CategorySection 
                 isRender={check}
