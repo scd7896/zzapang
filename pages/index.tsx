@@ -24,7 +24,9 @@ const Home: NextPage<{ userAgent: string }> = ({ userAgent }) => {
       }, 2500)
     );
 
-    return clearInterval(timer);
+    return ()=>{
+      clearInterval(timer)
+    };
   }, [thumbnail.nowSelect]);
   return (
     <main>
